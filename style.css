@@ -1,0 +1,280 @@
+
+body {
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  /*background: url('../../images/ai_background.webp') center/cover no-repeat fixed;*/
+}
+  
+  /*ESTILOS GLOBALES (TEXTO Y NAVEGACIÓN)*/
+* {
+  color: #d7d7d7;
+  font-family: 'Ysabeau', sans-serif;
+  padding-left: 5px;
+  padding-right: 5px;
+  scrollbar-width: thin;
+  scrollbar-color: #ff50d7 #f42069;
+}
+  
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #f42069;
+}
+*::-webkit-scrollbar-track {
+  background-color: #ff50d7;
+}
+  
+p {
+  font-size: 12px;
+}
+  
+u {
+  font-size: 16px;
+  cursor: pointer;
+}
+  
+ul, li {
+  list-style-type: none;
+}
+  
+a {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+label {
+  line-height: 0.5rem;
+}
+
+button {
+  background-color: transparent;
+  border: 3px solid #f42069;
+}
+  
+  /*NAVBAR aka BARRA DE NAVEGACIÓN*/
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background-color: #000;
+  border-bottom: 3px solid #f42069;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 900;
+  font-size: 24px;
+}
+  
+#logo, .lang, .menu {
+  cursor: pointer;
+}
+  
+#logo {
+  margin: 0 auto;
+  height: 1.9rem;
+  z-index: 902;
+}
+  
+#lang {
+  padding-left: 2%;
+  z-index: 901;
+}
+  
+#menu {
+  padding-right: 2%;
+  z-index: 903;
+}
+  
+  /*MENU DE NAVEGACIÓN EXPANDIBLE*/
+.side-menu {
+  position: fixed;
+  top: 32px;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  background-color: #000000d7;
+  border-left: 3px solid #f42069;
+  display: none;
+  overflow-y: auto;
+  z-index: 800;
+}
+  
+.side-menu.show {
+  display: block;
+}
+  
+.side-menu h1 {
+  padding-left: 3rem;
+  color: #f42069;
+  font-size: 36px;
+}
+  
+.side-menu a {
+  color: #f42069;
+  font-size: 24px;
+  cursor: pointer;
+}
+  
+.section {
+  display: block;
+  margin: 0.5rem;
+  z-index: 801;
+}
+  
+.section a {
+  color: #d7d7d7;
+  font-size: 16px;
+  cursor: pointer;
+}
+  
+#current {
+  cursor: default;
+  color: #ff50ff;
+  font-size: 19px;
+}
+  
+#subSection {
+  font-size: 18px;
+  cursor: default;
+}
+  
+.artist {
+  /*max-width: 80px;*/
+  border: 2px solid #f42069;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 840;
+}
+  
+.artist img {
+  width: 42px;
+  border-radius: 5px;
+}
+  
+  /*MENU DE SELECCIÓN DE LENGUAJE*/
+.lang-menu {
+  position: fixed;
+  top: 40px;
+  left: 1rem;
+  width: 160px;
+  height: auto;
+  background-color: #000000d7;
+  border: 3px solid #f42069;
+  padding: 0.3rem;
+  border-radius: 10px;
+  align-items: center;
+  display: none;
+  z-index: 700;
+}
+  
+.lang-menu.show {
+  display: inline;
+}
+  
+.lang-menu a {
+  cursor: pointer;
+}
+  
+  /*CONTENIDO DE LA PAGINA*/
+.content {
+  position: absolute;
+  top: 32px;
+  max-width: 720px;
+  width: 100%;
+  background-color: #000000aa;
+  border: 3px solid #f42069;
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 300;
+}
+  
+.content h1 {
+  font-size: 24px;
+  padding-left: 3rem;
+}
+  
+#title {
+  font-size: 36px;
+}
+  
+.content p {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  line-height: 0.8rem;
+}
+
+#checkboxes {
+  display: flex;
+}
+
+.box {
+  width: 30%;
+}
+
+#resultado {
+  text-align: center;
+}
+
+.respuesta {
+  translate: 50%;
+  filter: opacity(0%);
+}
+
+.respuesta.show{
+  filter: opacity(100%);
+}
+
+.separadorD {
+  color: #f42069;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  display: block;
+  z-index: 301;
+}
+  
+.separadorM {
+  display: none;
+}
+  
+  /*INFORMACIÓN*/
+.infoBox {
+  width: 75%;
+  height: 320px;
+  border-radius: 10px;
+  text-align: left;
+  overflow: hidden;
+  z-index: 320;
+}
+  
+.infoBox h1 {
+  color: #f42069;
+  font-size: 24px;
+  line-height: 5px;
+}
+  
+.foot {
+  text-align: center;
+}
+  
+.foot a {
+  color: #d7d7d7;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+  z-index: 310;
+}
+  
