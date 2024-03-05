@@ -142,6 +142,17 @@ function generarAcorde() {
   ninth = document.getElementById("9maj"); ninth.style.display = "none";
   eleventh = document.getElementById("11jus"); eleventh.style.display = "none";
   thirteen = document.getElementById("13maj"); thirteen.style.display = "none";
+  
+  second.innerHTML = "<img width='50%' src='res/dot.png'>";
+  third.innerHTML = "<img width='50%' src='res/dot.png'>";
+  fourth.innerHTML = "<img width='50%' src='res/dot.png'>";
+  fifth.innerHTML = "<img width='50%' src='res/dot.png'>";
+  sixth.innerHTML = "<img width='50%' src='res/dot.png'>";
+  seventh.innerHTML = "<img width='50%' src='res/dot.png'>";
+  octave.innerHTML = "<img width='50%' src='res/dot.png'>";
+  ninth.innerHTML = "<img width='50%' src='res/dot.png'>";
+  eleventh.innerHTML = "<img width='50%' src='res/dot.png'>";
+  thirteen.innerHTML = "<img width='50%' src='res/dot.png'>";
 
   second = false
   third = false
