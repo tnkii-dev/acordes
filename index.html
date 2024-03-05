@@ -1,83 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="canonical" href="http://niuplies.com/">
-    
-    <title>Estudiar Acordes</title>
-    <meta name="description" content="proyecto Niupleis. Mundo virtual,  Idols, Experiencias de entretenimiento. Arte y tecnología">
-
+    <title>Acordes</title>
+    <meta name="description" content="Estudia acordes con el metodo de repetición espaciada">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" media="only screen and (max-width: 719px)" href="styleM.css">
-
-    <link rel="stylesheet" href="../../css/fonts.css">
-
-    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
-
-    <meta name="keywords" content="Niupleis, Música, Entretenimiento, Artistas Virtuales, Tecnología, Comunidad, Eventos Especiales, Colecciones, Animaciones, Horror Cósmico, Horror Existencial, Webtoon, Multimedia, Foro, Inteligencia Artificial, Blog, Creatividad, Cultura Pop, Ídolos Virtuales, Desarrollo Tecnológico, Innovación, Comunicación, Experiencia de Usuario, Arte Digital, Cosplay, AR, ARG">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="icon" href="res/favicon.ico" type="image/x-icon">
     <meta name="author" content="tnkii">
-    <meta name="robots" content="index, follow">
-    
-    <script src="../../js/script.js"></script>
-    <script src="acordes.js"></script>
+    <script src="script.js"></script>
+    <script>if(window.innerWidth<720){
+      document.write('<script src="acordesM.js"><\/script>');
+    } else {
+      document.write('<script src="acordes.js"><\/script>');
+    }</script>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BYH6G11CJK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-BYH6G11CJK');
-</script>
-
 <body>
     <header class="navbar" id="navBar">
-        <nav id="lang" onclick="langSelection()">⊕</nav>
-        <img id="logo" src="../../images/niupleisLogo_anim.gif"/>
-        <nav id="menu" onclick="toggleMenu()">≡</nav>
+        <img id="logo" src="res/niupleisLogo.png"/>
+        <nav id="menu" onclick="toggleMenu()" style="cursor: pointer;">≡</nav>
     </header>
-
     <aside class="side-menu" id="sideMenu">
       <br><a style="cursor: default;">Documentación</a>
       <div class="section">
-        <a>Blog sobre este proyecto</a><br><br>
-        <a>Repo (github) (O simplemente ctrl+shift+i)</a><br>
-      </div>
-
-      <br><a style="cursor: default;">Navegar</a>
-      <div class="section">
-        <a href="../..">Inicio</a><br>
-        <a href="../../info/">Info</a><br>
-        <a href="../../waifus">Waifus</a><br>
-        <a href="../../galery/">Galeria</a><br>
-        <a href="../../music/">Música</a><br>
-        <a href="../../games/">Juegos</a><br>
-        <a href="../" id="current" style="cursor: pointer;">Projects</a><br>
-        <a id="current">└ chordGen</a><br>
-        <a href="http://blog.niupleis.com/">Blog ↗</a><br>
+        <a href="http://blog.niupleis.com/entries/_1.html">Blog sobre este proyecto</a><br><br>
+        <a href="https://github.com/tnkii-dev/acordes">Repo (github) (O simplemente ctrl+shift+i)</a><br><br>
+        <a href="https://www.niupleis.com/">niupleis.com↗</a><br>
       </div>
     </aside>
-
-    <aside class="lang-menu" id="langMenu">
-      <a onclick="setCookie('lang', 'en', 7)">english</a>
-      <a onclick="setCookie('lang', 'es', 7)">español</a><br>
-      <a onclick="setCookie('lang', 'kr', 7)">한국어</a>
-      <a onclick="setCookie('lang', 'jp', 7)">日本語</a>
-      <a style="display: none;">♡♡</a>
-    </aside>
-
     <script>
       if (isDesktop()) {
         toggleMenu();
-        langSelection();
       }
     </script>
-
     <div class="content">
+      <h1 id="title">Acordes</h1>
       <div id="checkboxes">
       <div class="box">
         <label><input type="checkbox" id="escalasCheckbox" checked>Escalas (triadas mayores)</label>
@@ -115,56 +74,25 @@
       <button onclick="mostrarAcorde()">Mostrar Acorde</button>
       <div style="font-size: 48px;" id="resultado"></div>
       <div class="respuesta" id="respuesta">
-        <div ><img src="piano.png" style="translate: -50%; border: 3px solid white;"></div>
-        <div id="1st" style="position: fixed; display: none; translate: -213px; top: 100px;"><img src="dot.png"></div>
-        <div id="2min" style="position: fixed; display: none; translate: -203px; top: 70px;"><img src="dot.png"></div>
-        <div id="2maj" style="position: fixed; display: none; translate: -193px; top: 100px;"><img src="dot.png"></div>
-        <div id="3min" style="position: fixed; display: none; translate: -183px; top: 70px;"><img src="dot.png"></div>
-        <div id="3maj" style="position: fixed; display: none; translate: -173px; top: 100px;"><img src="dot.png"></div>
-        <div id="4jus" style="position: fixed; display: none; translate: -153px; top: 100px;"><img src="dot.png"></div>
-        <div id="tri" style="position: fixed; display: none; translate: -143px; top: 70px;"><img src="dot.png"></div>
-        <div id="5jus" style="position: fixed; display: none; translate: -133px; top: 100px;"><img src="dot.png"></div>
-        <div id="6min" style="position: fixed; display: none; translate: -123px; top: 70px;"><img src="dot.png"></div>
-        <div id="6maj" style="position: fixed; display: none; translate: -113px; top: 100px;"><img src="dot.png"></div>
-        <div id="7min" style="position: fixed; display: none; translate: -103px; top: 70px;"><img src="dot.png"></div>
-        <div id="7maj" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="dot.png"></div>
-        <div id="8va" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="dot.png"></div>
-        <div id="9min" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="dot.png"></div>
-        <div id="9maj" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="dot.png"></div>
-        <div id="10min" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="dot.png"></div>
-        <div id="10maj" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="dot.png"></div>
-        <div id="11jus" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="dot.png"></div>
-        <div id="tritri" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="dot.png"></div>
-        <div id="12jus" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="dot.png"></div>
-        <div id="13min" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="dot.png"></div>
-        <div id="13maj" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="dot.png"></div>
+        <div ><img class="piano" src="res/piano.png" style="translate: -50%; border: 3px solid white;"></div>
+        <div id="1st" style="position: fixed; display: none; translate: -213px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="2maj" style="position: fixed; display: none; translate: -193px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="3maj" style="position: fixed; display: none; translate: -173px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="4jus" style="position: fixed; display: none; translate: -153px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="5jus" style="position: fixed; display: none; translate: -133px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="6maj" style="position: fixed; display: none; translate: -113px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="7maj" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="8va" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="9maj" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="10maj" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="11jus" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="12jus" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="res/dot.png"></div>
+        <div id="13maj" style="position: fixed; display: none; translate: -93px; top: 100px;"><img src="res/dot.png"></div>
       </div>
 
       <script>
         document.addEventListener('DOMContentLoaded', function () {generarAcorde();});
       </script>
-      
-      <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-      <script>
-        kofiWidgetOverlay.draw('niupleis', {
-          'type': 'floating-chat',
-          'floating-chat.donateButton.text': 'Donate',
-          'floating-chat.donateButton.background-color': '#ff42069',
-          'floating-chat.donateButton.text-color': '#fff'
-        });
-      </script>
-
-      <br><div class="separadorM">✧ ────── • ────── ♡ ────── • ────── ✧</div>
-      <div class="separadorD">✧ ──────────── • ──────────── ♡ ──────────── • ──────────── ✧</div><br>
-
-      <div class="foot">
-        <a href="http://blog.niupleis.com">Blog</a>
-        <a>Descargas</a>
-        <a>Contacto</a>
-        <a href="../../donate/">Donaciones</a>
-        <a>Condiciones de uso</a>
-      </div>
-
+      <br><br>
     </div>
-    <br>
 </body>

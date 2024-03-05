@@ -81,14 +81,14 @@ function generarAcorde() {
   const invertidas = ["/C", "/D", "/E", "/F", "/G", "/A", "B/", "/C#", "/D#", "/F#", "/G#", "/A#"];
   const arpegiosModales = [" jonico", " dorico", " frigio", " lidio", " mixolidio", " eolico", " locrio"];
 
-  const tops = ["110px", "75px", "110px", "75px", "110px", "110px", "75px", "110px", "75px",
-  "110px", "75px", "110px", "110px", "75px", "110px", "75px", "110px", "110px", "75px", "110px",
-  "75px", "110px", "75px", "110px", "110px", "75px", "110px", "75px", "110px", "110px", "75px",
-  "110px", "75px", "110px", "75px", "110px"]
-  const translations = ["-213px", "-203px", "-193px", "-183px", "-173px", "-153px", "-143px",
-  "-133px", "-123px", "-113px","-103px", "-93px", "-73px", "-63px", "-53px", "-43px", "-33px",
-  "-13px", "-03px", "7px", "17px", "27px", "37px", "47px", "67px", "77px", "87px", "97px",
-  "107px", "127px", "137px", "147px", "157px", "167px", "177px", "187px"]
+  const tops = ["95px", "70px", "95px", "70px", "95px", "95px", "70px", "95px", "70px",
+  "95px", "70px", "95px", "95px", "70px", "95px", "70px", "95px", "95px", "70px", "95px",
+  "70px", "95px", "70px", "95px", "95px", "70px", "95px", "70px", "95px", "95px", "70px",
+  "95px", "70px", "95px", "70px", "95px"]
+  const translations = ["-191.7px", "-182.7px", "-173.7px", "-164.7px", "-155.7px", "-137.7px", "-128.7px",
+  "-119.7px", "-110.7px", "-101.7px", "-92.7px", "-83.7px", "-65.7px", "-56.7px", "-47.7px", "-38.7px", "-29.7px",
+  "-11.7px", "-2.7px", "6.3px", "15.3px", "24.3px", "33.3px", "42.3px", "60.3px", "69.3px", "78.3px", "87.3px",
+  "96.3px", "114.3px", "123.3px", "132.3px", "141.3px", "150.3px", "159.3px", "168.3px"]
 
   // Obtener las casillas marcadas
   const escalaCheckbox = document.getElementById("escalasCheckbox").checked;
@@ -115,6 +115,7 @@ function generarAcorde() {
   // Generar acorde aleatorio
   let acorde = [];
 
+  let passTriad = false
   let es = ""
 
   let escala = false
@@ -455,19 +456,24 @@ function generarAcorde() {
       ninth = document.getElementById("9maj"); ninth.style.display = "flex"; ninth.style.top = tops[root+14]; ninth.style.translate = translations[root+14];
       acorde.push(extension);
     } else if (extension == "11") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4]; third.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
+      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
       fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
       seventh = document.getElementById("7maj"); seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
       ninth = document.getElementById("9maj"); ninth.style.display = "flex"; ninth.style.top = tops[root+14]; ninth.style.translate = translations[root+14];
       eleventh = document.getElementById("11jus"); eleventh.style.display = "flex"; eleventh.style.top = tops[root+17]; eleventh.style.translate = translations[root+17];
+      third.innerHTML = "<img style='width:50%; filter:hue-rotate(60deg);' src='res/dot.png'>";
+      passTriad = true;
       acorde.push(extension);
     } else if (extension == "13") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4]; third.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7]; fifth.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
+      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
       seventh = document.getElementById("7maj"); seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
       ninth = document.getElementById("9maj"); ninth.style.display = "flex"; ninth.style.top = tops[root+14]; ninth.style.translate = translations[root+14];
       eleventh = document.getElementById("11jus"); eleventh.style.display = "flex"; eleventh.style.top = tops[root+17]; eleventh.style.translate = translations[root+17];
       thirteen = document.getElementById("13maj"); thirteen.style.display = "flex"; thirteen.style.top = tops[root+21]; thirteen.style.translate = translations[root+21];
+      fifth.innerHTML = "<img style='width:50%; filter:hue-rotate(60deg);' src='res/dot.png'>";
+      third.innerHTML = "<img style='width:50%; filter:hue-rotate(60deg);' src='res/dot.png'>";
+      passTriad = true;
       acorde.push(extension);
     } else {extension = false}
   }
@@ -501,20 +507,22 @@ function generarAcorde() {
       acorde.push(alteracion)
     } else if (alteracion == "(#13)" && extension == "11") {
       if (third) {
-        third = document.getElementById("3maj"); third.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
+        third = document.getElementById("3maj"); third.innerHTML = "<img style='width:50%; filter:hue-rotate(60deg);' src='res/dot.png'>"
       };
       if (fifth) {
-        fifth = document.getElementById("5jus"); fifth.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
+        fifth = document.getElementById("5jus"); fifth.innerHTML = "<img style='width:50%; filter:hue-rotate(60deg);' src='res/dot.png'>"
       };
+      passTriad = true;
       thirteen = document.getElementById("13maj"); thirteen.style.display = "flex"; thirteen.style.top = tops[root+22]; thirteen.style.translate = translations[root+22];
       acorde.push(alteracion)
     } else if (alteracion == "(♭13)" && extension == "11") {
       if (third) {
-        third = document.getElementById("3maj"); third.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
+        third = document.getElementById("3maj"); third.innerHTML = "<img style='width:50%;filter:hue-rotate(60deg);' src='res/dot.png'>"
       };
       if (fifth) {
-        fifth = document.getElementById("5jus"); fifth.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
+        fifth = document.getElementById("5jus"); fifth.innerHTML = "<img style='width:50%; filter:hue-rotate(60deg);' src='res/dot.png'>"
       };
+      passTriad = true;
       thirteen = document.getElementById("13maj"); thirteen.style.display = "flex"; thirteen.style.top = tops[root+20]; thirteen.style.translate = translations[root+20];
       acorde.push(alteracion)
     }
@@ -576,6 +584,18 @@ function generarAcorde() {
         }
     }
   }*/
+
+  second = document.getElementById("2maj"); second.innerHTML = "<img width='50%' src='res/dot.png'>";
+  fourth = document.getElementById("4jus"); fourth.innerHTML = "<img width='50%' src='res/dot.png'>";
+  sixth = document.getElementById("6maj"); sixth.innerHTML = "<img width='50%' src='res/dot.png'>";
+  seventh = document.getElementById("7maj"); seventh.innerHTML = "<img width='50%' src='res/dot.png'>";
+  octave = document.getElementById("8va"); octave.innerHTML = "<img width='50%' src='res/dot.png'>";
+  ninth = document.getElementById("9maj"); ninth.innerHTML = "<img width='50%' src='res/dot.png'>";
+  eleventh = document.getElementById("11jus"); eleventh.innerHTML = "<img width='50%' src='res/dot.png'>";
+  thirteen = document.getElementById("13maj"); thirteen.innerHTML = "<img width='50%' src='res/dot.png'>";
+
+  if (!passTriad) {third = document.getElementById("3maj"); third.innerHTML = "<img width='50%' src='res/dot.png'>"};
+  if (!passTriad) {fifth = document.getElementById("5jus"); fifth.innerHTML = "<img width='50%' src='res/dot.png'>"};
 
   // Arpegio Modal
   if (arpegioModalCheckbox) {
