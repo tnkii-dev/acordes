@@ -131,16 +131,17 @@ function generarAcorde() {
   let arpegio = false
 
   // Limpiar
-  second = document.getElementById("2maj"); second.style.display = "none";
-  third = document.getElementById("3maj"); third.style.display = "none";
-  fourth = document.getElementById("4jus"); fourth.style.display = "none";
-  fifth = document.getElementById("5jus"); fifth.style.display = "none";
-  sixth = document.getElementById("6maj"); sixth.style.display = "none";
-  seventh = document.getElementById("7maj"); seventh.style.display = "none";
-  octave = document.getElementById("8va"); octave.style.display = "none";
-  ninth = document.getElementById("9maj"); ninth.style.display = "none";
-  eleventh = document.getElementById("11jus"); eleventh.style.display = "none";
-  thirteen = document.getElementById("13maj"); thirteen.style.display = "none";
+  let root = document.getElementById("1st"); root.style.display = "none";
+  let second = document.getElementById("2maj"); second.style.display = "none";
+  let third = document.getElementById("3maj"); third.style.display = "none";
+  let fourth = document.getElementById("4jus"); fourth.style.display = "none";
+  let fifth = document.getElementById("5jus"); fifth.style.display = "none";
+  let sixth = document.getElementById("6maj"); sixth.style.display = "none";
+  let seventh = document.getElementById("7maj"); seventh.style.display = "none";
+  let octave = document.getElementById("8va"); octave.style.display = "none";
+  let ninth = document.getElementById("9maj"); ninth.style.display = "none";
+  let eleventh = document.getElementById("11jus"); eleventh.style.display = "none";
+  let thirteen = document.getElementById("13maj"); thirteen.style.display = "none";
 
   second.innerHTML = "<img src='res/dot.png'>";
   third.innerHTML = "<img src='res/dot.png'>";
@@ -153,82 +154,71 @@ function generarAcorde() {
   eleventh.innerHTML = "<img src='res/dot.png'>";
   thirteen.innerHTML = "<img src='res/dot.png'>";
 
-  second = false
-  third = false
-  fourth = false
-  fifth = false
-  sixth = false
-  seventh = false
-  octave = false
-  ninth = false
-  eleventh = false
-  thirteen = false
-
   // Escala
   if (escalaCheckbox) {
     escala = escalas[Math.floor(Math.random() * escalas.length)];
-    if (escala == "C") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[0]; root.style.translate = translations[0]; root=0;}
-    else if (escala == "C#") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[1]; root.style.translate = translations[1]; root=1; if(Math.floor(Math.random()*2)+1==2){escala="D♭"};}
-    else if (escala == "D") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[2]; root.style.translate = translations[2]; root=2;}
-    else if (escala == "D#") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[3]; root.style.translate = translations[3]; root=3; if(Math.floor(Math.random()*2)+1==2){escala="E♭"};}
-    else if (escala == "E") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[4]; root.style.translate = translations[4]; root=4;}
-    else if (escala == "F") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[5]; root.style.translate = translations[5]; root=5;}
-    else if (escala == "F#") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[6]; root.style.translate = translations[6]; root=6; if(Math.floor(Math.random()*2)+1==2){escala="G♭"};}
-    else if (escala == "G") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[7]; root.style.translate = translations[7]; root=7;}
-    else if (escala == "G#") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[8]; root.style.translate = translations[8]; root=8; if(Math.floor(Math.random()*2)+1==2){escala="A♭"};}
-    else if (escala == "A") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[9]; root.style.translate = translations[9]; root=9;}
-    else if (escala == "A#") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[10]; root.style.translate = translations[10]; root=10; if(Math.floor(Math.random()*2)+1==2){escala="B♭"};}
-    else if (escala == "B") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[11]; root.style.translate = translations[11]; root=11;}
+    if (escala == "C") {root.style.display = "flex"; root.style.top = tops[0]; root.style.translate = translations[0]; root=0;}
+    else if (escala == "C#") {root.style.display = "flex"; root.style.top = tops[1]; root.style.translate = translations[1]; root=1; if(Math.floor(Math.random()*2)+1==2){escala="D♭"};}
+    else if (escala == "D") {root.style.display = "flex"; root.style.top = tops[2]; root.style.translate = translations[2]; root=2;}
+    else if (escala == "D#") {root.style.display = "flex"; root.style.top = tops[3]; root.style.translate = translations[3]; root=3; if(Math.floor(Math.random()*2)+1==2){escala="E♭"};}
+    else if (escala == "E") {root.style.display = "flex"; root.style.top = tops[4]; root.style.translate = translations[4]; root=4;}
+    else if (escala == "F") {root.style.display = "flex"; root.style.top = tops[5]; root.style.translate = translations[5]; root=5;}
+    else if (escala == "F#") {root.style.display = "flex"; root.style.top = tops[6]; root.style.translate = translations[6]; root=6; if(Math.floor(Math.random()*2)+1==2){escala="G♭"};}
+    else if (escala == "G") {root.style.display = "flex"; root.style.top = tops[7]; root.style.translate = translations[7]; root=7;}
+    else if (escala == "G#") {root.style.display = "flex"; root.style.top = tops[8]; root.style.translate = translations[8]; root=8; if(Math.floor(Math.random()*2)+1==2){escala="A♭"};}
+    else if (escala == "A") {root.style.display = "flex"; root.style.top = tops[9]; root.style.translate = translations[9]; root=9;}
+    else if (escala == "A#") {root.style.display = "flex"; root.style.top = tops[10]; root.style.translate = translations[10]; root=10; if(Math.floor(Math.random()*2)+1==2){escala="B♭"};}
+    else if (escala == "B") {root.style.display = "flex"; root.style.top = tops[11]; root.style.translate = translations[11]; root=11;}
     acorde.push(escala);
-    third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
-    fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+    third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+    fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
   }
 
   // Triadas
   if (triadasCheckbox && Math.floor(Math.random()*4)+1!=2) {
     triada = triadas[Math.floor(Math.random() * triadas.length)]
     acorde.push(triada);
-    third = document.getElementById("3maj"); third.style.display = "none";
-    fifth = document.getElementById("5jus"); fifth.style.display = "none";
+    third.style.display = "none";
+    fifth.style.display = "none";
     if (triada == "maj") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
       es == "maj"
     } else if (triada == "M") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
       es == "maj"
     } else if (triada == "min") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
       es == "min"
     } else if (triada == "m") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
       es == "min"
     } else if (triada == "-") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
       es == "min"
     } else if (triada == "dim") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
-      fifht = document.getElementById("5jus"); fifht.style.display = "flex"; fifth.style.top = tops[root+6]; fifht.style.translate = translations[root+6];
+      third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+6]; fifth.style.translate = translations[root+6];
       es == "dim"
     } else if (triada == "°") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
-      fifht = document.getElementById("5jus"); fifht.style.display = "flex"; fifth.style.top = tops[root+6]; fifht.style.translate = translations[root+6];
+      third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+6]; fifth.style.translate = translations[root+6];
       es == "dim"
     } else if (triada == "aug") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+8]; fifth.style.translate = translations[root+8];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+8]; fifth.style.translate = translations[root+8];
       es == "aug"
     } else if (triada == "+") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+8]; fifth.style.translate = translations[root+8];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+8]; fifth.style.translate = translations[root+8];
       es == "aug"
     } else if (triada == "(#5)") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+8]; fifth.style.translate = translations[root+8];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+8]; fifth.style.translate = translations[root+8];
       es == "aug"
     }
   }
@@ -237,70 +227,70 @@ function generarAcorde() {
   if (septimasCheckbox && Math.floor(Math.random()*4)+1!=2) {
     septima = septimas[Math.floor(Math.random() * septimas.length)];
     if (septima == "7" && (triada=="dim"||triada=="°")) {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+3];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
-      seventh= document.getElementById("7maj"); seventh.style.display = "flex"; seventh.style.top = tops[root+9]; seventh.style.translate = translations[root+9];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+3];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      seventh.style.display = "flex"; seventh.style.top = tops[root+9]; seventh.style.translate = translations[root+9];
       acorde.push(septima)
     } else if (septima == "7" && (triada=="maj"||triada=="M"||!triada)) {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
-      seventh= document.getElementById("7maj"); seventh.style.display = "flex"; seventh.style.top = tops[root+11]; seventh.style.translate = translations[root+11];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      seventh.style.display = "flex"; seventh.style.top = tops[root+11]; seventh.style.translate = translations[root+11];
       acorde.push(septima)
     } else if (septima == "7" && (triada=="aug"||triada=="+"||triada=="(#5)")) {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+8]; fifth.style.translate = translations[root+8];
-      seventh= document.getElementById("7maj"); seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+8]; fifth.style.translate = translations[root+8];
+      seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
       acorde.push(septima)
     } else if (septima == "7") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
-      seventh= document.getElementById("7maj"); seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
       acorde.push(septima)
     } else if (septima == "△" && escalaCheckbox) {
       acorde = [];
       acorde.push(escala);
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
-      seventh= document.getElementById("7maj"); seventh.style.display = "flex"; seventh.style.top = tops[root+11]; seventh.style.translate = translations[root+11];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      seventh.style.display = "flex"; seventh.style.top = tops[root+11]; seventh.style.translate = translations[root+11];
       acorde.push(septima)
     } else if (septima == "△7" && escalaCheckbox) {
-      third = document.getElementById("3maj"); third.style.display = "none";
-      fifth = document.getElementById("5jus"); fifth.style.display = "none";
-      seventh = document.getElementById("7maj"); seventh.style.display = "none";
+      third.style.display = "none";
+      fifth.style.display = "none";
+      seventh.style.display = "none";
       acorde = [];
       acorde.push(escala);
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
-      seventh= document.getElementById("7maj"); seventh.style.display = "flex"; seventh.style.top = tops[root+11]; seventh.style.translate = translations[root+11];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      seventh.style.display = "flex"; seventh.style.top = tops[root+11]; seventh.style.translate = translations[root+11];
       acorde.push(septima)
     } else if (septima == "M7" && (triada=="min"||triada=="m")) {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
-      seventh= document.getElementById("7maj"); seventh.style.display = "flex"; seventh.style.top = tops[root+11]; seventh.style.translate = translations[root+11];
+      third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      seventh.style.display = "flex"; seventh.style.top = tops[root+11]; seventh.style.translate = translations[root+11];
       acorde.push(septima)
     } else if (septima == "⌀7" && escalaCheckbox) {
-      third = document.getElementById("3maj"); third.style.display = "none";
-      fifth = document.getElementById("5jus"); fifth.style.display = "none";
-      seventh = document.getElementById("7maj"); seventh.style.display = "none";
+      third.style.display = "none";
+      fifth.style.display = "none";
+      seventh.style.display = "none";
       acorde = [];
       acorde.push(escala);
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
-      seventh= document.getElementById("7maj"); seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
+      third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
       acorde.push(septima)
     } else if (septima == "7(♭5)" && (triada=="min"||triada=="m"||triada=="-")) {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+6]; fifth.style.translate = translations[root+6];
-      seventh= document.getElementById("7maj"); seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
+      third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+6]; fifth.style.translate = translations[root+6];
+      seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
       acorde.push(septima)
     } else if (septima == "(add9)" && triada) {
-      ninth = document.getElementById("7maj"); ninth.style.display = "flex"; ninth.style.top = tops[root+14]; ninth.style.translate = translations[root+14];
+      ninth.style.display = "flex"; ninth.style.top = tops[root+14]; ninth.style.translate = translations[root+14];
       acorde.push(septima)
     } else if (septima == "(add11)" && triada) {
-      eleventh = document.getElementById("7maj"); eleventh.style.display = "flex"; eleventh.style.top = tops[root+17]; eleventh.style.translate = translations[root+17];
+      eleventh.style.display = "flex"; eleventh.style.top = tops[root+17]; eleventh.style.translate = translations[root+17];
       acorde.push(septima)
     } else if (septima == "(add13)" && triada) {
-      thirteen = document.getElementById("7maj"); thirteen.style.display = "flex"; thirteen.style.top = tops[root+21]; thirteen.style.translate = translations[root+21];
+      thirteen.style.display = "flex"; thirteen.style.top = tops[root+21]; thirteen.style.translate = translations[root+21];
       acorde.push(septima)
     } else {
       septima = false
@@ -312,10 +302,10 @@ function generarAcorde() {
     powerChord = powerChords[Math.floor(Math.random() * powerChords.length)];
     if (powerChord == "5") {
       acorde.push(powerChord);
-      fifth= document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
     } else if (powerChord == "3" && !septima) {
       acorde.push(powerChord);
-      third= document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];  
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];  
     } else {powerChord = false};
   }
 
@@ -323,38 +313,38 @@ function generarAcorde() {
   if (sextasCheckbox && !powerChord && Math.floor(Math.random()*4)+1!=2) {
     sexta = sextas[Math.floor(Math.random() * sextas.length)];
     if (sexta == "6" && es == "menor") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
-      sixth = document.getElementById("6maj"); sixth.style.display = "flex"; sixth.style.top = tops[root+9]; sixth.style.translate = translations[root+9];
+      third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      sixth.style.display = "flex"; sixth.style.top = tops[root+9]; sixth.style.translate = translations[root+9];
       acorde.push(sexta)
     } else if (sexta == "6" && escalaCheckbox) {
       acorde = [];
-      seventh = document.getElementById("7maj"); seventh.style.display = "none";
+      seventh.style.display = "none";
       acorde.push(escala);
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
-      sixth = document.getElementById("6maj"); sixth.style.display = "flex"; sixth.style.top = tops[root+9]; sixth.style.translate = translations[root+9];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      sixth.style.display = "flex"; sixth.style.top = tops[root+9]; sixth.style.translate = translations[root+9];
       acorde.push(sexta)
     } else if (sexta == "(add♭6)" && (es == "menor" || !triada)) {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
-      sixth = document.getElementById("6maj"); sixth.style.display = "flex"; sixth.style.top = tops[root+8]; sixth.style.translate = translations[root+8];
+      third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      sixth.style.display = "flex"; sixth.style.top = tops[root+8]; sixth.style.translate = translations[root+8];
       acorde.push(sexta)
     } else if (sexta == "(♭6)" && (es == "menor" || !triada)) {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
-      sixth = document.getElementById("6maj"); sixth.style.display = "flex"; sixth.style.top = tops[root+8]; sixth.style.translate = translations[root+8];
+      third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      sixth.style.display = "flex"; sixth.style.top = tops[root+8]; sixth.style.translate = translations[root+8];
       acorde.push(sexta)
     } else if (sexta == "⁶₉" && escalaCheckbox) {
       acorde = [];
-      third = document.getElementById("3maj"); third.style.display = "none";
-      fifth = document.getElementById("5jus"); fifth.style.display = "none";
-      seventh = document.getElementById("7maj"); seventh.style.display = "none";
+      third.style.display = "none";
+      fifth.style.display = "none";
+      seventh.style.display = "none";
       acorde.push(escala);
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
-      sixth = document.getElementById("6maj"); sixth.style.display = "flex"; sixth.style.top = tops[root+9]; sixth.style.translate = translations[root+9];
-      ninth = document.getElementById("9maj"); ninth.style.display = "flex"; ninth.style.top = tops[root+14]; ninth.style.translate = translations[root+14];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      sixth.style.display = "flex"; sixth.style.top = tops[root+9]; sixth.style.translate = translations[root+9];
+      ninth.style.display = "flex"; ninth.style.top = tops[root+14]; ninth.style.translate = translations[root+14];
       acorde.push(sexta)
     } else {sexta = false};
   }
@@ -377,42 +367,42 @@ function generarAcorde() {
     suspendida = suspendidas[Math.floor(Math.random() * suspendidas.length)];
     if (suspendida == "sus" && escalaCheckbox) {
       acorde = [];
-      third = document.getElementById("3maj"); third.style.display = "none";
-      fifth = document.getElementById("5jus"); fifth.style.display = "none";
-      sixth = document.getElementById("6maj"); sixth.style.display = "none";
-      seventh = document.getElementById("7maj"); seventh.style.display = "none";
-      ninth = document.getElementById("9maj"); ninth.style.display = "none";
-      eleventh = document.getElementById("11jus"); eleventh.style.display = "none";
-      thirteen = document.getElementById("13maj"); thirteen.style.display = "none";
+      third.style.display = "none";
+      fifth.style.display = "none";
+      sixth.style.display = "none";
+      seventh.style.display = "none";
+      ninth.style.display = "none";
+      eleventh.style.display = "none";
+      thirteen.style.display = "none";
       acorde.push(escala);
-      fourth = document.getElementById("4jus"); fourth.style.display = "flex"; fourth.style.top = tops[root+5]; fourth.style.translate = translations[root+5];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      fourth.style.display = "flex"; fourth.style.top = tops[root+5]; fourth.style.translate = translations[root+5];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
       acorde.push(suspendida);
     } else if (suspendida == "sus4" && escalaCheckbox) {
       acorde = [];
-      third = document.getElementById("3maj"); third.style.display = "none";
-      fifth = document.getElementById("5jus"); fifth.style.display = "none";
-      sixth = document.getElementById("6maj"); sixth.style.display = "none";
-      seventh = document.getElementById("7maj"); seventh.style.display = "none";
-      ninth = document.getElementById("9maj"); ninth.style.display = "none";
-      eleventh = document.getElementById("11jus"); eleventh.style.display = "none";
-      thirteen = document.getElementById("13maj"); thirteen.style.display = "none";
+      third.style.display = "none";
+      fifth.style.display = "none";
+      sixth.style.display = "none";
+      seventh.style.display = "none";
+      ninth.style.display = "none";
+      eleventh.style.display = "none";
+      thirteen.style.display = "none";
       acorde.push(escala);
-      fourth = document.getElementById("4jus"); fourth.style.display = "flex"; fourth.style.top = tops[root+5]; fourth.style.translate = translations[root+5];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      fourth.style.display = "flex"; fourth.style.top = tops[root+5]; fourth.style.translate = translations[root+5];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
       acorde.push(suspendida);
     } else if (suspendida == "sus2" && escalaCheckbox) {
       acorde = [];
-      third = document.getElementById("3maj"); third.style.display = "none";
-      fifth = document.getElementById("5jus"); fifth.style.display = "none";
-      sixth = document.getElementById("6maj"); sixth.style.display = "none";
-      seventh = document.getElementById("7maj"); seventh.style.display = "none";
-      ninth = document.getElementById("9maj"); ninth.style.display = "none";
-      eleventh = document.getElementById("11jus"); eleventh.style.display = "none";
-      thirteen = document.getElementById("13maj"); thirteen.style.display = "none";
+      third.style.display = "none";
+      fifth.style.display = "none";
+      sixth.style.display = "none";
+      seventh.style.display = "none";
+      ninth.style.display = "none";
+      eleventh.style.display = "none";
+      thirteen.style.display = "none";
       acorde.push(escala);
-      second = document.getElementById("2maj"); second.style.display = "flex"; second.style.top = tops[root+2]; second.style.translate = translations[root+2];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      second.style.display = "flex"; second.style.top = tops[root+2]; second.style.translate = translations[root+2];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
       acorde.push(suspendida);
     } else {suspendida = false}
   }
@@ -422,20 +412,20 @@ function generarAcorde() {
     miscelanea = miscelaneas[Math.floor(Math.random() * miscelaneas.length)];
     if (miscelanea == "2" && escalaCheckbox) {
       acorde = [];
-      third = document.getElementById("3maj"); third.style.display = "none";
-      fourth = document.getElementById("4jus"); fourth.style.display = "none";
-      fifth = document.getElementById("5jus"); fifth.style.display = "none";
-      sixth = document.getElementById("6maj"); sixth.style.display = "none";
-      seventh = document.getElementById("7maj"); seventh.style.display = "none";
-      octave = document.getElementById("8va"); octave.style.display = "none";
-      ninth = document.getElementById("9maj"); ninth.style.display = "none";
-      eleventh = document.getElementById("11jus"); eleventh.style.display = "none";
-      thirteen = document.getElementById("13maj"); thirteen.style.display = "none";
+      third.style.display = "none";
+      fourth.style.display = "none";
+      fifth.style.display = "none";
+      sixth.style.display = "none";
+      seventh.style.display = "none";
+      octave.style.display = "none";
+      ninth.style.display = "none";
+      eleventh.style.display = "none";
+      thirteen.style.display = "none";
       acorde.push(escala);
-      second = document.getElementById("2maj"); second.style.display = "flex"; second.style.top = tops[root+2]; second.style.translate = translations[root+2];
+      second.style.display = "flex"; second.style.top = tops[root+2]; second.style.translate = translations[root+2];
       acorde.push(miscelanea);
     } else if (miscelanea == "(add2)") {
-      second = document.getElementById("2maj"); second.style.display = "flex"; second.style.top = tops[root+2]; second.style.translate = translations[root+2];
+      second.style.display = "flex"; second.style.top = tops[root+2]; second.style.translate = translations[root+2];
       acorde.push(miscelanea);
     }
   }
@@ -444,37 +434,37 @@ function generarAcorde() {
   if (extensionesCheckbox && Math.floor(Math.random()*4)+1!=2) {
     extension = extensiones[Math.floor(Math.random() * extensiones.length)];
     acorde = [];
-    second = document.getElementById("2maj"); second.style.display = "none";
-    sixth = document.getElementById("6maj"); sixth.style.display = "none";
-    eleventh = document.getElementById("11jus"); eleventh.style.display = "none";
-    thirteen = document.getElementById("13maj"); thirteen.style.display = "none";
+    second.style.display = "none";
+    sixth.style.display = "none";
+    eleventh.style.display = "none";
+    thirteen.style.display = "none";
     acorde.push(escala);
     if (extension == "9") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
-      seventh = document.getElementById("7maj"); seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
-      ninth = document.getElementById("9maj"); ninth.style.display = "flex"; ninth.style.top = tops[root+14]; ninth.style.translate = translations[root+14];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
+      ninth.style.display = "flex"; ninth.style.top = tops[root+14]; ninth.style.translate = translations[root+14];
       acorde.push(extension);
     } else if (extension == "7(add9)") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
-      seventh = document.getElementById("7maj"); seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
-      ninth = document.getElementById("9maj"); ninth.style.display = "flex"; ninth.style.top = tops[root+14]; ninth.style.translate = translations[root+14];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
+      ninth.style.display = "flex"; ninth.style.top = tops[root+14]; ninth.style.translate = translations[root+14];
       acorde.push(extension);
     } else if (extension == "11") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4]; third.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
-      seventh = document.getElementById("7maj"); seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
-      ninth = document.getElementById("9maj"); ninth.style.display = "flex"; ninth.style.top = tops[root+14]; ninth.style.translate = translations[root+14];
-      eleventh = document.getElementById("11jus"); eleventh.style.display = "flex"; eleventh.style.top = tops[root+17]; eleventh.style.translate = translations[root+17];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4]; third.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
+      seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
+      ninth.style.display = "flex"; ninth.style.top = tops[root+14]; ninth.style.translate = translations[root+14];
+      eleventh.style.display = "flex"; eleventh.style.top = tops[root+17]; eleventh.style.translate = translations[root+17];
       acorde.push(extension);
     } else if (extension == "13") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4]; third.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
-      fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7]; fifth.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
-      seventh = document.getElementById("7maj"); seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
-      ninth = document.getElementById("9maj"); ninth.style.display = "flex"; ninth.style.top = tops[root+14]; ninth.style.translate = translations[root+14];
-      eleventh = document.getElementById("11jus"); eleventh.style.display = "flex"; eleventh.style.top = tops[root+17]; eleventh.style.translate = translations[root+17];
-      thirteen = document.getElementById("13maj"); thirteen.style.display = "flex"; thirteen.style.top = tops[root+21]; thirteen.style.translate = translations[root+21];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4]; third.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7]; fifth.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
+      seventh.style.display = "flex"; seventh.style.top = tops[root+10]; seventh.style.translate = translations[root+10];
+      ninth.style.display = "flex"; ninth.style.top = tops[root+14]; ninth.style.translate = translations[root+14];
+      eleventh.style.display = "flex"; eleventh.style.top = tops[root+17]; eleventh.style.translate = translations[root+17];
+      thirteen.style.display = "flex"; thirteen.style.top = tops[root+21]; thirteen.style.translate = translations[root+21];
       acorde.push(extension);
     } else {extension = false}
   }
@@ -483,46 +473,46 @@ function generarAcorde() {
   if (alteracionesCheckbox && Math.floor(Math.random()*4)+1!=2) {
     alteracion = alteraciones[Math.floor(Math.random() * alteraciones.length)];
     if (alteracion == "(omit5)" && septima) {
-      fifth = document.getElementById("5jus"); fifth.style.display = "none";
+      fifth.style.display = "none";
       acorde.push(alteracion)
     } else if (alteracion == "(no5)" && (septima || extension)) {
-      fifth = document.getElementById("5jus"); fifth.style.display = "none";
+      fifth.style.display = "none";
       acorde.push(alteracion)
     } else if (alteracion == "(omit7)" && (!triada || !septima) && extension !="7(add9)" && extension) {
-      seventh = document.getElementById("7maj"); seventh.style.display = "none";
+      seventh.style.display = "none";
       acorde.push(alteracion)
     } else if (alteracion == "(no7)" && (!triada || !septima) && extension) {
-      seventh = document.getElementById("7maj"); seventh.style.display = "none";
+      seventh.style.display = "none";
       acorde.push(alteracion)
     } else if (alteracion == "(#9)" && extension == "7") {
-      ninth = document.getElementById("9maj"); ninth.style.display = "flex"; ninth.style.top = tops[root+15]; ninth.style.translate = translations[root+15];
+      ninth.style.display = "flex"; ninth.style.top = tops[root+15]; ninth.style.translate = translations[root+15];
       acorde.push(alteracion)
     } else if (alteracion == "(♭9)" && extension == "7") {
-      ninth = document.getElementById("9maj"); ninth.style.display = "flex"; ninth.style.top = tops[root+13]; ninth.style.translate = translations[root+13];
+      ninth.style.display = "flex"; ninth.style.top = tops[root+13]; ninth.style.translate = translations[root+13];
       acorde.push(alteracion)
     } else if (alteracion == "(#11)" && extension == "9") {
-      eleventh = document.getElementById("11jus"); eleventh.style.display = "flex"; eleventh.style.top = tops[root+18]; eleventh.style.translate = translations[root+18];
+      eleventh.style.display = "flex"; eleventh.style.top = tops[root+18]; eleventh.style.translate = translations[root+18];
       acorde.push(alteracion)
     } else if (alteracion == "(♭11)" && extension == "9") {
-      eleventh = document.getElementById("11jus"); eleventh.style.display = "flex"; eleventh.style.top = tops[root+16]; eleventh.style.translate = translations[root+16];
+      eleventh.style.display = "flex"; eleventh.style.top = tops[root+16]; eleventh.style.translate = translations[root+16];
       acorde.push(alteracion)
     } else if (alteracion == "(#13)" && extension == "11") {
       if (third) {
-        third = document.getElementById("3maj"); third.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
+        third.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
       };
       if (fifth) {
-        fifth = document.getElementById("5jus"); fifth.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
+        fifth.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
       };
-      thirteen = document.getElementById("13maj"); thirteen.style.display = "flex"; thirteen.style.top = tops[root+22]; thirteen.style.translate = translations[root+22];
+      thirteen.style.display = "flex"; thirteen.style.top = tops[root+22]; thirteen.style.translate = translations[root+22];
       acorde.push(alteracion)
     } else if (alteracion == "(♭13)" && extension == "11") {
       if (third) {
-        third = document.getElementById("3maj"); third.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
+        third.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
       };
       if (fifth) {
-        fifth = document.getElementById("5jus"); fifth.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
+        fifth.innerHTML = "<img style='filter:hue-rotate(60deg);' src='res/dot.png'>"
       };
-      thirteen = document.getElementById("13maj"); thirteen.style.display = "flex"; thirteen.style.top = tops[root+20]; thirteen.style.translate = translations[root+20];
+      thirteen.style.display = "flex"; thirteen.style.top = tops[root+20]; thirteen.style.translate = translations[root+20];
       acorde.push(alteracion)
     }
   }
@@ -596,27 +586,16 @@ function generarAcorde() {
     } else if (arpegio == " eolico") { n=[2, 3, 5, 7, 8, 10, 12]
     } else if (arpegio == " locrio") { n=[1, 3, 5, 6, 8, 10, 12]
     };
-    second = document.getElementById("2maj"); second.style.top = tops[root+n[0]]; second.style.display = "flex"; second.style.translate = translations[root+n[0]]; second.innerHTML = "<img width='50%' src='res/dot.png'>";
-    third = document.getElementById("3maj"); third.style.top = tops[root+n[1]]; third.style.display = "flex"; third.style.translate = translations[root+n[1]]; third.innerHTML = "<img width='50%' src='res/dot.png'>";
-    fourth = document.getElementById("4jus"); fourth.style.top = tops[root+n[2]]; fourth.style.display = "flex"; fourth.style.translate = translations[root+n[2]]; fourth.innerHTML = "<img width='50%' src='res/dot.png'>";
-    fifth = document.getElementById("5jus"); fifth.style.top = tops[root+n[3]]; fifth.style.display = "flex"; fifth.style.translate = translations[root+n[3]]; fifth.innerHTML = "<img width='50%' src='res/dot.png'>";
-    sixth = document.getElementById("6maj"); sixth.style.top = tops[root+n[4]]; sixth.style.display = "flex"; sixth.style.translate = translations[root+n[4]]; sixth.innerHTML = "<img width='50%' src='res/dot.png'>";
-    seventh = document.getElementById("7maj"); seventh.style.top = tops[root+n[5]]; seventh.style.display = "flex"; seventh.style.translate = translations[root+n[5]]; seventh.innerHTML = "<img width='50%' src='res/dot.png'>";
-    octave = document.getElementById("8va"); octave.style.top = tops[root+n[6]]; octave.style.display = "flex"; octave.style.translate = translations[root+n[6]]; octave.innerHTML = "<img width='50%' src='res/dot.png'>";
+    second.style.top = tops[root+n[0]]; second.style.display = "flex"; second.style.translate = translations[root+n[0]]; second.innerHTML = "<img width='50%' src='res/dot.png'>";
+    third.style.top = tops[root+n[1]]; third.style.display = "flex"; third.style.translate = translations[root+n[1]]; third.innerHTML = "<img width='50%' src='res/dot.png'>";
+    fourth.style.top = tops[root+n[2]]; fourth.style.display = "flex"; fourth.style.translate = translations[root+n[2]]; fourth.innerHTML = "<img width='50%' src='res/dot.png'>";
+    fifth.style.top = tops[root+n[3]]; fifth.style.display = "flex"; fifth.style.translate = translations[root+n[3]]; fifth.innerHTML = "<img width='50%' src='res/dot.png'>";
+    sixth.style.top = tops[root+n[4]]; sixth.style.display = "flex"; sixth.style.translate = translations[root+n[4]]; sixth.innerHTML = "<img width='50%' src='res/dot.png'>";
+    seventh.style.top = tops[root+n[5]]; seventh.style.display = "flex"; seventh.style.translate = translations[root+n[5]]; seventh.innerHTML = "<img width='50%' src='res/dot.png'>";
+    octave.style.top = tops[root+n[6]]; octave.style.display = "flex"; octave.style.translate = translations[root+n[6]]; octave.innerHTML = "<img width='50%' src='res/dot.png'>";
   }
 
   // Mostrar el acorde en la interfaz
   const resultadoElement = document.getElementById("resultado");
   resultadoElement.textContent = acorde.join("");
-
-  second = document.getElementById("2maj");
-  third = document.getElementById("3maj");
-  fourth = document.getElementById("4jus");
-  fifth = document.getElementById("5jus");
-  sixth = document.getElementById("6maj");
-  seventh = document.getElementById("7maj");
-  octave = document.getElementById("8va");
-  ninth = document.getElementById("9maj");
-  eleventh = document.getElementById("11jus");
-  thirteen = document.getElementById("13maj");
 };
