@@ -121,6 +121,7 @@ function generarAcorde() {
 
   let es = ""
 
+  // Limpiar
   let escala = false
   let triada = false
   let septima = false
@@ -134,7 +135,6 @@ function generarAcorde() {
   let invertida = false
   let arpegio = false
 
-  // Limpiar
   let root = document.getElementById("1st"); root.style.display = "none";
   let second = document.getElementById("2maj"); second.style.display = "none";
   let third = document.getElementById("3maj"); third.style.display = "none";
@@ -414,7 +414,10 @@ function generarAcorde() {
   // Miscelaneas
   if (miscelaneasCheckbox && Math.floor(Math.random()*4)+1!=2) {
     miscelanea = miscelaneas[Math.floor(Math.random() * miscelaneas.length)];
-    if (miscelanea == "2" && escalaCheckbox) {
+    if (miscelanea == "(add2)") {
+      second.style.display = "flex"; second.style.top = tops[root+2]; second.style.translate = translations[root+2];
+      acorde.push(miscelanea);
+    } else if (miscelanea == "2") {
       acorde = [];
       third.style.display = "none";
       fourth.style.display = "none";
@@ -427,9 +430,8 @@ function generarAcorde() {
       thirteen.style.display = "none";
       acorde.push(escala);
       second.style.display = "flex"; second.style.top = tops[root+2]; second.style.translate = translations[root+2];
-      acorde.push(miscelanea);
-    } else if (miscelanea == "(add2)") {
-      second.style.display = "flex"; second.style.top = tops[root+2]; second.style.translate = translations[root+2];
+      third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
+      fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
       acorde.push(miscelanea);
     }
   }
