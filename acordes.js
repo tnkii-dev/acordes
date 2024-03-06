@@ -20,7 +20,7 @@ function uncheckArpegio() {
     extensionesCheckbox || alteracionesCheckbox || inversionesCheckbox || miscelaneasCheckbox) {
     arpegioModalCheckbox.checked = false
   }
-}
+};
 
 function checkLabels() {
   const alteracionesCheckbox = document.getElementById("alteracionesCheckbox");
@@ -166,20 +166,20 @@ function generarAcorde() {
 
   // Escala
   if (escalaCheckbox) {
-    escala = escalas[Math.floor(Math.random() * escalas.length)]
-    acorde.push(escala);
+    escala = escalas[Math.floor(Math.random() * escalas.length)];
     if (escala == "C") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[0]; root.style.translate = translations[0]; root=0;}
-    else if (escala == "C#") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[1]; root.style.translate = translations[1]; root=1;}
+    else if (escala == "C#") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[1]; root.style.translate = translations[1]; root=1; if(Math.floor(Math.random()*2)+1==2){escala="D♭"};}
     else if (escala == "D") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[2]; root.style.translate = translations[2]; root=2;}
-    else if (escala == "D#") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[3]; root.style.translate = translations[3]; root=3;}
+    else if (escala == "D#") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[3]; root.style.translate = translations[3]; root=3; if(Math.floor(Math.random()*2)+1==2){escala="E♭"};}
     else if (escala == "E") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[4]; root.style.translate = translations[4]; root=4;}
     else if (escala == "F") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[5]; root.style.translate = translations[5]; root=5;}
-    else if (escala == "F#") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[6]; root.style.translate = translations[6]; root=6;}
+    else if (escala == "F#") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[6]; root.style.translate = translations[6]; root=6; if(Math.floor(Math.random()*2)+1==2){escala="G♭"};}
     else if (escala == "G") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[7]; root.style.translate = translations[7]; root=7;}
-    else if (escala == "G#") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[8]; root.style.translate = translations[8]; root=8;}
+    else if (escala == "G#") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[8]; root.style.translate = translations[8]; root=8; if(Math.floor(Math.random()*2)+1==2){escala="A♭"};}
     else if (escala == "A") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[9]; root.style.translate = translations[9]; root=9;}
-    else if (escala == "A#") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[10]; root.style.translate = translations[10]; root=10;}
+    else if (escala == "A#") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[10]; root.style.translate = translations[10]; root=10; if(Math.floor(Math.random()*2)+1==2){escala="B♭"};}
     else if (escala == "B") {root = document.getElementById("1st"); root.style.display = "flex"; root.style.top = tops[11]; root.style.translate = translations[11]; root=11;}
+    acorde.push(escala);
     third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];
     fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
   }
@@ -199,23 +199,23 @@ function generarAcorde() {
       fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
       es == "maj"
     } else if (triada == "min") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+3];
+      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
       fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
       es == "min"
     } else if (triada == "m") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+3];
+      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
       fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
       es == "min"
     } else if (triada == "-") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+3];
+      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
       fifth = document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
       es == "min"
     } else if (triada == "dim") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+3];
+      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
       fifht = document.getElementById("5jus"); fifht.style.display = "flex"; fifth.style.top = tops[root+6]; fifht.style.translate = translations[root+6];
       es == "dim"
     } else if (triada == "°") {
-      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+3];
+      third = document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+3]; third.style.translate = translations[root+3];
       fifht = document.getElementById("5jus"); fifht.style.display = "flex"; fifth.style.top = tops[root+6]; fifht.style.translate = translations[root+6];
       es == "dim"
     } else if (triada == "aug") {
@@ -311,14 +311,10 @@ function generarAcorde() {
   if (powerChordsCheckbox && !septima && !triada && Math.floor(Math.random()*4)+1!=2) {
     powerChord = powerChords[Math.floor(Math.random() * powerChords.length)];
     if (powerChord == "5") {
-      acorde.push(powerChord)
-      var shift = 0
-      if (escala == "A#" || escala == "B") {shift=1}
+      acorde.push(powerChord);
       fifth= document.getElementById("5jus"); fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
     } else if (powerChord == "3" && !septima) {
-      acorde.push(powerChord)
-      var shift = 1
-      if (escala == "C" || escala == "F" || escala == "F#" || escala == "G") {shift=0}
+      acorde.push(powerChord);
       third= document.getElementById("3maj"); third.style.display = "flex"; third.style.top = tops[root+4]; third.style.translate = translations[root+4];  
     } else {powerChord = false};
   }

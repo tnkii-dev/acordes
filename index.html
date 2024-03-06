@@ -70,8 +70,8 @@
       </div>
       </div>
 
-      <button onclick="generarAcorde()">Generar Acorde</button>
-      <button onclick="mostrarAcorde()">Mostrar Acorde</button>
+      <button onclick="generarAcorde()">Generar Acorde (space)</button>
+      <button onclick="mostrarAcorde()">Mostrar Acorde (Enter)</button>
       <div style="font-size: 48px;" id="resultado"></div>
       <div class="respuesta" id="respuesta">
         <div ><img class="piano" src="res/piano.png" style="translate: -50%; border: 3px solid white;"></div>
@@ -92,6 +92,18 @@
 
       <script>
         document.addEventListener('DOMContentLoaded', function () {generarAcorde();});
+        document.addEventListener('keydown', function (event) {
+          if (event.code === 'Space') {
+            event.preventDefault();
+            generarAcorde();
+          };
+        });
+        document.addEventListener('keydown', function (event) {
+          if (event.code === 'Enter') {
+            event.preventDefault();
+            mostrarAcorde();
+          };
+        });
       </script>
       <br><br>
     </div>
