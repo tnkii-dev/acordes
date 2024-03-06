@@ -4,6 +4,7 @@ function mostrarAcorde() {
 };
 
 function uncheckArpegio() {
+  const escalaCheckbox = document.getElementById("escalasCheckbox");
   const triadasCheckbox = document.getElementById("triadasCheckbox");
   const septimasCheckbox = document.getElementById("septimasCheckbox");
   const powerChordsCheckbox = document.getElementById("powerChordsCheckbox");
@@ -19,7 +20,8 @@ function uncheckArpegio() {
   if (triadasCheckbox || septimasCheckbox || powerChordsCheckbox || sextasCheckbox || suspendidasCheckbox || 
     extensionesCheckbox || alteracionesCheckbox || inversionesCheckbox || miscelaneasCheckbox) {
     arpegioModalCheckbox.checked = false
-  }
+  };
+  escalaCheckbox.checked = true
 };
 
 function checkLabels() {
@@ -42,6 +44,7 @@ function checkLabels() {
 function isolateLabel() {
   const arpegioModalCheckbox = document.getElementById("arpegioModalCheckbox");
 
+  const escalaCheckbox = document.getElementById("escalasCheckbox");
   const triadasCheckbox = document.getElementById("triadasCheckbox");
   const septimasCheckbox = document.getElementById("septimasCheckbox");
   const powerChordsCheckbox = document.getElementById("powerChordsCheckbox");
@@ -64,7 +67,8 @@ function isolateLabel() {
     alteracionesCheckbox.checked  = false;
     inversionesCheckbox.checked  = false;
     miscelaneasCheckbox.checked  = false
-  }
+  };
+  escalaCheckbox.checked = true
 }
 
 function generarAcorde() {
@@ -84,11 +88,11 @@ function generarAcorde() {
   const tops = ["110px", "75px", "110px", "75px", "110px", "110px", "75px", "110px", "75px",
   "110px", "75px", "110px", "110px", "75px", "110px", "75px", "110px", "110px", "75px", "110px",
   "75px", "110px", "75px", "110px", "110px", "75px", "110px", "75px", "110px", "110px", "75px",
-  "110px", "75px", "110px", "75px", "110px"]
+  "110px", "75px", "110px", "75px", "110px"];
   const translations = ["-213px", "-203px", "-193px", "-183px", "-173px", "-153px", "-143px",
   "-133px", "-123px", "-113px","-103px", "-93px", "-73px", "-63px", "-53px", "-43px", "-33px",
   "-13px", "-03px", "7px", "17px", "27px", "37px", "47px", "67px", "77px", "87px", "97px",
-  "107px", "127px", "137px", "147px", "157px", "167px", "177px", "187px"]
+  "107px", "127px", "137px", "147px", "157px", "167px", "177px", "187px"];
 
   // Obtener las casillas marcadas
   const escalaCheckbox = document.getElementById("escalasCheckbox").checked;
