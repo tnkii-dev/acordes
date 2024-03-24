@@ -2,19 +2,22 @@
 
 Acordes es una herramienta interactiva diseñada para facilitar el estudio y la práctica de acordes musicales. Esta aplicación, desarrollada en JavaScript, está destinada a ayudar a estudiantes principiantes o intermedios, que desean mejorar sus habilidades en la identificación y reproducción de acordes.
 
+[![Static Badge](https://img.shields.io/badge/acordes-%23efb810?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjgwMHB4IiBoZWlnaHQ9IjgwMHB4IiBzdHlsZT0ic2hhcGUtcmVuZGVyaW5nOmdlb21ldHJpY1ByZWNpc2lvbjsgdGV4dC1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uOyBpbWFnZS1yZW5kZXJpbmc6b3B0aW1pemVRdWFsaXR5OyBmaWxsLXJ1bGU6ZXZlbm9kZDsgY2xpcC1ydWxlOmV2ZW5vZGQiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KPGc%2BPHBhdGggc3R5bGU9Im9wYWNpdHk6MC45ODgiIGZpbGw9IiNlZmI4MGYiIGQ9Ik0gMzg0LjUsMTUwLjUgQyAzODcuNzMxLDE1Mi4yMiAzOTAuNTY0LDE1NC41NTMgMzkzLDE1Ny41QyA0MDIuNTU2LDE2OC4wNTEgNDExLjcyMiwxNzguODg1IDQyMC41LDE5MEMgNDEwLjg3NiwyMDAuNjI1IDQwMC44NzYsMjEwLjk1OSAzOTAuNSwyMjFDIDQxMC4zNCwyNTAuODE2IDQxOC4xNzQsMjgzLjY1IDQxNCwzMTkuNUMgNDA3LjQ2NCwzNjguMDg4IDM4My42MzEsNDA1LjU4OCAzNDIuNSw0MzJDIDMwOS42MzEsNDUxLjI3MSAyNzQuMjk4LDQ1Ny45MzcgMjM2LjUsNDUyQyAyMTYuMjYsNDQ5LjEyMiAxOTcuNzYsNDQxLjk1NiAxODEsNDMwLjVDIDE3MC42MzcsNDQxLjE5NyAxNTkuOTcxLDQ1MS41MyAxNDksNDYxLjVDIDEzNi42NSw0NDguNjUxIDEyNC40ODMsNDM1LjY1MSAxMTIuNSw0MjIuNUMgMTIxLjgzMyw0MTIuODMzIDEzMS4xNjcsNDAzLjE2NyAxNDAuNSwzOTMuNUMgMTIwLjQzOSwzNjYuOTc5IDExMC43NzIsMzM2Ljk3OSAxMTEuNSwzMDMuNUMgMTE0LjM0NCwyMzguNTE2IDE0NS4wMTEsMTkyLjAxNiAyMDMuNSwxNjRDIDI0My44NDksMTQ4LjY5IDI4NC4xODIsMTQ4LjY5IDMyNC41LDE2NEMgMzM0Ljc1MiwxNjguNzA1IDM0NC4yNTIsMTc0LjUzOCAzNTMsMTgxLjVDIDM2NC4wMDUsMTcxLjY2MSAzNzQuNTA1LDE2MS4zMjggMzg0LjUsMTUwLjUgWiBNIDI1Ny41LDIwOS41IEMgMjc3LjI0OCwyMDguNDggMjk1LjU4MSwyMTIuOTggMzEyLjUsMjIzQyAyNjkuMjc5LDI2Ni41NTUgMjI1Ljc3OSwzMDkuNzIyIDE4MiwzNTIuNUMgMTc3Ljk0NiwzNDcuMDU4IDE3NC45NDYsMzQxLjA1OCAxNzMsMzM0LjVDIDE2MC43NzIsMjg1LjgyMyAxNzUuNjA1LDI0Ny45ODkgMjE3LjUsMjIxQyAyMzAuMTcyLDIxNC4zODEgMjQzLjUwNiwyMTAuNTQ4IDI1Ny41LDIwOS41IFogTSAzNDguNSwyNjMuNSBDIDM1Mi40NTksMjY5Ljg2OSAzNTQuOTU5LDI3Ni44NjkgMzU2LDI4NC41QyAzNjIuMTg4LDMzMy4zIDM0My4zNTUsMzY4LjQ2NyAyOTkuNSwzOTBDIDI3OC41NTQsMzk3LjA2OCAyNTcuMjIxLDM5OC40MDEgMjM1LjUsMzk0QyAyMzEuMDEsMzkyLjcyNiAyMjYuNjc3LDM5MS4wNTkgMjIyLjUsMzg5QyAyNjQuMzk1LDM0Ni45MzggMzA2LjM5NSwzMDUuMTA1IDM0OC41LDI2My41IFoiLz48L2c%2BCjxnPjxwYXRoIHN0eWxlPSJvcGFjaXR5OjAuOTgzIiBmaWxsPSIjZWZiODBmIiBkPSJNIDQ0OC41LDI2MS41IEMgNTI4LjUsMjYxLjUgNjA4LjUsMjYxLjUgNjg4LjUsMjYxLjVDIDY4Mi4yMzQsMjc3Ljk1OCA2NzUuNTY3LDI5NC4yOTEgNjY4LjUsMzEwLjVDIDY3MS44NzEsMzEyLjg0NiA2NzUuMjA0LDMxNS4xNzkgNjc4LjUsMzE3LjVDIDY3My40LDMxNy45MSA2NjguNTY2LDMxOC45MSA2NjQsMzIwLjVDIDYxNy43NTUsNDMwLjU5MyA1NzAuNzU1LDU0MC4yNiA1MjMsNjQ5LjVDIDUwNS4yLDY0My44NDMgNDg3LjcsNjM3LjUxIDQ3MC41LDYzMC41QyA1MTYuMDM4LDUyNi41OTMgNTYxLjcwNCw0MjIuNzU5IDYwNy41LDMxOUMgNTUyLjUwMSwzMTguNSA0OTcuNTAxLDMxOC4zMzMgNDQyLjUsMzE4LjVDIDQ0NC4zMDQsMjk5LjQ2MiA0NDYuMzA0LDI4MC40NjIgNDQ4LjUsMjYxLjUgWiIvPjwvZz4KPC9zdmc%2BCg%3D%3D&labelColor=%23ffffd7)](http://www.niupleis.com/projects/acordes) [![Static Badge](https://img.shields.io/badge/donar-%23ff50ff?logo=kofi&label=ko-fi&labelColor=%23ffd7ff)](https://ko-fi.com/niupleis)
+
+
 El propósito es ofrecer una plataforma dinámica que haga del aprendizaje de acordes una experiencia atractiva y memorable. A través de la generación aleatoria de acordes y la visualización opcional de notas en un piano virtual, la aplicación utiliza la técnica de repetición espaciada para optimizar el proceso de aprendizaje, para permitir consolidar conocimientos de manera progresiva y efectiva.
 
 #### Contenidos
-<a href="#instalacion">Instalación</a>
-├<a href="#uso">Uso</a>
-│└ <a href="#interfaz">Interfaz</a>
-└ <a href="#comoFunciona">Como Funciona</a>
-. ├ <a href="#condiciones">Condiciones</a>
-. ├ <a href="#condicionesEspeciales">Condiciones especiales</a>
-. ├ <a href="#displayDeAcordes">Mostrar acorde</a>
-. ├ <a href="#displayDeNotas">Mostrar notas</a>
-. ├ <a href="#mostrarEscalaModal">Mostrar escala modal</a>
-. └ <a href="#otrasFunciones">Otro</a>
+<a href="#instalacion">Instalación</a><br>
+├<a href="#uso">Uso</a><br>
+│└ <a href="#interfaz">Interfaz</a><br>
+└ <a href="#comoFunciona">Como Funciona</a><br>
+. ├ <a href="#condiciones">Condiciones</a><br>
+. ├ <a href="#condicionesEspeciales">Condiciones especiales</a><br>
+. ├ <a href="#displayDeAcordes">Mostrar acorde</a><br>
+. ├ <a href="#displayDeNotas">Mostrar notas</a><br>
+. ├ <a href="#mostrarEscalaModal">Mostrar escala modal</a><br>
+. └ <a href="#otrasFunciones">Otro</a><br>
 
 <h2 id="instalacion">Instalación</h2>
 
@@ -130,6 +133,8 @@ Esta casilla se utiliza independientemente de todas las demás, esta no genera a
 ![](res/screenshoots/casilla_modal.png)
 
 <h2 id="comoFunciona">Como funciona</h2>
+
+Aquí explicaré el funcionamiento sin entrar en detalles, para poder entender cada parte será necesario revisar [acordes.js](/acordes.js/)
 
 <h3 id="funciones">Funciones</h3>
 Este es el framework con el que se generan y muestran los acordes:
