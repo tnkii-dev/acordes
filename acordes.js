@@ -72,6 +72,7 @@ function isolateLabel() {
 }
 
 function generarAcorde() {
+  //CREAR ARREGLOS DE NOTAS, FIGURAS Y OPCIONES
   const escalas = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
   const triadas = ["maj", "M", "m", "min", "-", "aug", "+", "(#5)", "dim", "°"];
   const septimas = ["7", "△", "△7", "M7", "⌀7", "7(♭5)", "(add9)", "(add11)", "(add13)"];
@@ -94,7 +95,8 @@ function generarAcorde() {
   "-13px", "-03px", "7px", "17px", "27px", "37px", "47px", "67px", "77px", "87px", "97px",
   "107px", "127px", "137px", "147px", "157px", "167px", "177px", "187px"];
 
-  // Obtener las casillas marcadas
+
+  //OBTENER LA CONFIGURACION DE LA INTERFAZ Y VALIDARLA
   const escalaCheckbox = document.getElementById("escalasCheckbox").checked;
   const triadasCheckbox = document.getElementById("triadasCheckbox").checked;
   const septimasCheckbox = document.getElementById("septimasCheckbox").checked;
@@ -108,7 +110,6 @@ function generarAcorde() {
   const miscelaneasCheckbox = document.getElementById("miscelaneasCheckbox").checked;
   const arpegioModalCheckbox = document.getElementById("arpegioModalCheckbox").checked;
 
-  // Validar que al menos una opción esté seleccionada
   if (!(escalaCheckbox || arpegioModalCheckbox || triadasCheckbox || septimasCheckbox ||
         powerChordsCheckbox || sextasCheckbox || /*alteradasCheckbox ||*/ suspendidasCheckbox ||
         extensionesCheckbox|| alteracionesCheckbox || inversionesCheckbox || miscelaneasCheckbox)) {
@@ -116,11 +117,10 @@ function generarAcorde() {
     return;
   }
 
-  // Generar acorde aleatorio
+
+  //EMPEZAR A GENERAR ACORDE Y LIMPIAR LA PANTALLA
   let acorde = [];
-
   let es = ""
-
   // Limpiar
   let escala = false
   let triada = false
@@ -134,7 +134,6 @@ function generarAcorde() {
   let alteracion = false
   let invertida = false
   let arpegio = false
-
   let root = document.getElementById("1st"); root.style.display = "none";
   let second = document.getElementById("2maj"); second.style.display = "none";
   let third = document.getElementById("3maj"); third.style.display = "none";
@@ -146,7 +145,6 @@ function generarAcorde() {
   let ninth = document.getElementById("9maj"); ninth.style.display = "none";
   let eleventh = document.getElementById("11jus"); eleventh.style.display = "none";
   let thirteen = document.getElementById("13maj"); thirteen.style.display = "none";
-
   second.innerHTML = "<img src='res/dot.png'>";
   third.innerHTML = "<img src='res/dot.png'>";
   fourth.innerHTML = "<img src='res/dot.png'>";
@@ -158,7 +156,8 @@ function generarAcorde() {
   eleventh.innerHTML = "<img src='res/dot.png'>";
   thirteen.innerHTML = "<img src='res/dot.png'>";
 
-  // Escala
+
+  //ESCALA
   if (escalaCheckbox) {
     escala = escalas[Math.floor(Math.random() * escalas.length)];
     if (escala == "C") {root.style.display = "flex"; root.style.top = tops[0]; root.style.translate = translations[0]; root=0;}
@@ -178,7 +177,8 @@ function generarAcorde() {
     fifth.style.display = "flex"; fifth.style.top = tops[root+7]; fifth.style.translate = translations[root+7];
   }
 
-  // Triadas
+  
+  //TRIADAS
   if (triadasCheckbox && Math.floor(Math.random()*4)+1!=2) {
     triada = triadas[Math.floor(Math.random() * triadas.length)]
     acorde.push(triada);
