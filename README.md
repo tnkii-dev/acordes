@@ -7,6 +7,8 @@ Acordes es una herramienta interactiva diseñada para facilitar el estudio y la 
 
 El propósito es ofrecer una plataforma dinámica que haga del aprendizaje de acordes una experiencia atractiva y memorable. A través de la generación aleatoria de acordes y la visualización opcional de notas en un piano virtual, la aplicación utiliza la técnica de repetición espaciada para optimizar el proceso de aprendizaje, para permitir consolidar conocimientos de manera progresiva y efectiva.
 
+*Los archivos [acordesM.js](/acordesM.js) y [styleM.js](/styleM.css) son para una version diferente de estilo para poder usar más comodamente en dispositivos móviles, para desactivar hay que modificar la línea `<link rel="stylesheet" media="only screen and (max-width: 719px)" href="styleM.css">` en el archivo [index.html](/index.html)*
+
 #### Contenidos
 <a href="#instalacion">Instalación</a><br>
 ├<a href="#uso">Uso</a><br>
@@ -23,7 +25,7 @@ El propósito es ofrecer una plataforma dinámica que haga del aprendizaje de ac
 
 La instalación de Acordes es opconal, puedes probarla en linea [aquí](http://www.niupleis.com/projects/acordes/)
 
-Si deseas descargarlo localmente simplemente clona este repositorio o descarga el [zip](https://github.com/tnkii-dev/acordes/archive/refs/heads/main.zip), Se ejecuta directamente en tu navegador sin necesidad de instalaciones adicionales o de un servidor, arrastrando el archivo [index.html](/index.html/) al navegador.
+Si deseas descargarlo localmente simplemente clona este repositorio o descarga el [zip](https://github.com/tnkii-dev/acordes/archive/refs/heads/main.zip), Se ejecuta directamente en tu navegador sin necesidad de instalaciones adicionales o de un servidor, arrastrando el archivo [index.html](/index.html) al navegador.
 
 <h2 id="uso">Uso</h2>
 
